@@ -1,4 +1,3 @@
-
 // RecipeCard.js
 
 class RecipeCard extends HTMLElement {

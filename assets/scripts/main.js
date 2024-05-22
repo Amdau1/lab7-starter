@@ -7,9 +7,9 @@ window.addEventListener('DOMContentLoaded', init);
 // Starts the program, all function calls trace back here
 function init() {
   // Get the recipes from localStorage
-  let recipes = getRecipesFromStorage();
+  let getrecipes = getRecipesFromStorage();
   // Add each recipe to the <main> element
-  addRecipesToDocument(recipes);
+  addRecipesToDocument(getrecipes);
   // Add the event listeners to the form elements
   initFormHandler();
 }
@@ -41,16 +41,16 @@ function getRecipesFromStorage() {
  */
 function addRecipesToDocument(recipes) {
   // A10. TODO - Get a reference to the <main> element
-  let reference = document.querySelector("main");
+  let ref = document.querySelector("main");
   // A11. TODO - Loop through each of the recipes in the passed in array,
   //            create a <recipe-card> element for each one, and populate
   //            each <recipe-card> with that recipe data using element.data = ...
   //            Append each element to <main>
   for (var i=0; i < recipes.length; i++) {
-    var currRecipes = recipes[i];
-    let newElement = document.createElement("recipe-card");
-    newElement.data = currRecipes;
-    reference.append(newElement);
+    var curr = recipes[i];
+    let newRecipe = document.createElement("recipe-card");
+    newRecipe.data = curr;
+    ref.append(newRecipe);
   }
 }
 
@@ -94,13 +94,13 @@ function initFormHandler() {
     }
 
     // B6. TODO - Create a new <recipe-card> element
-    let newElement = document.createElement("recipe-card");
+    let newEl = document.createElement("recipe-card");
 
     // B7. TODO - Add the recipeObject data to <recipe-card> using element.data
-    newElement.data = recipeObject;
+    newEl.data = recipeObject;
 
     // B8. TODO - Append this new <recipe-card> to <main>
-    document.querySelector("main").append(newElement);
+    document.querySelector("main").append(newEl);
 
     // B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
     //            then save the recipes array back to localStorage
